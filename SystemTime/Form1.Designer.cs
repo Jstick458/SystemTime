@@ -28,96 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnQuit = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtInterval = new System.Windows.Forms.TextBox();
-            this.hsbInterval = new System.Windows.Forms.HScrollBar();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            lblRun = new Label();
+            btnStart = new Button();
+            btnQuit = new Button();
+            groupBox1 = new GroupBox();
+            hsbInterval = new HScrollBar();
+            txtInterval = new TextBox();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
-            // label1
+            // lblRun
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(74, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            lblRun.AutoSize = true;
+            lblRun.BackColor = Color.Red;
+            lblRun.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRun.ForeColor = SystemColors.ControlText;
+            lblRun.Location = new Point(603, 195);
+            lblRun.Name = "lblRun";
+            lblRun.Size = new Size(117, 37);
+            lblRun.TabIndex = 0;
+            lblRun.Text = "Stopped";
             // 
             // btnStart
             // 
-            this.btnStart.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnStart.Location = new System.Drawing.Point(100, 159);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(142, 136);
-            this.btnStart.TabIndex = 1;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
+            btnStart.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnStart.Location = new Point(100, 159);
+            btnStart.Name = "btnStart";
+            btnStart.Size = new Size(142, 136);
+            btnStart.TabIndex = 1;
+            btnStart.Text = "Start";
+            btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += btnStart_Click;
+            btnStart.MouseDown += btnStart_MouseDown;
             // 
             // btnQuit
             // 
-            this.btnQuit.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnQuit.Location = new System.Drawing.Point(302, 159);
-            this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(142, 136);
-            this.btnQuit.TabIndex = 2;
-            this.btnQuit.Text = "Quit";
-            this.btnQuit.UseVisualStyleBackColor = true;
-            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            btnQuit.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            btnQuit.Location = new Point(302, 159);
+            btnQuit.Name = "btnQuit";
+            btnQuit.Size = new Size(142, 136);
+            btnQuit.TabIndex = 2;
+            btnQuit.Text = "Quit";
+            btnQuit.UseVisualStyleBackColor = true;
+            btnQuit.Click += btnQuit_Click;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.hsbInterval);
-            this.groupBox1.Controls.Add(this.txtInterval);
-            this.groupBox1.Location = new System.Drawing.Point(39, 311);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(524, 110);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Interval Time (s)";
-            // 
-            // txtInterval
-            // 
-            this.txtInterval.Location = new System.Drawing.Point(136, 20);
-            this.txtInterval.Name = "txtInterval";
-            this.txtInterval.ReadOnly = true;
-            this.txtInterval.Size = new System.Drawing.Size(241, 23);
-            this.txtInterval.TabIndex = 0;
-            this.txtInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            groupBox1.Controls.Add(hsbInterval);
+            groupBox1.Controls.Add(txtInterval);
+            groupBox1.Location = new Point(39, 311);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(524, 110);
+            groupBox1.TabIndex = 3;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Interval Time (s)";
             // 
             // hsbInterval
             // 
-            this.hsbInterval.Location = new System.Drawing.Point(23, 61);
-            this.hsbInterval.Maximum = 300;
-            this.hsbInterval.Name = "hsbInterval";
-            this.hsbInterval.Size = new System.Drawing.Size(492, 41);
-            this.hsbInterval.TabIndex = 1;
-            this.hsbInterval.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsbInterval_Scroll);
+            hsbInterval.Location = new Point(23, 61);
+            hsbInterval.Name = "hsbInterval";
+            hsbInterval.Size = new Size(492, 41);
+            hsbInterval.TabIndex = 1;
+            hsbInterval.Scroll += hsbInterval_Scroll;
+            // 
+            // txtInterval
+            // 
+            txtInterval.Location = new Point(136, 20);
+            txtInterval.Name = "txtInterval";
+            txtInterval.ReadOnly = true;
+            txtInterval.Size = new Size(241, 23);
+            txtInterval.TabIndex = 0;
+            txtInterval.TextAlign = HorizontalAlignment.Center;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnQuit);
-            this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(groupBox1);
+            Controls.Add(btnQuit);
+            Controls.Add(btnStart);
+            Controls.Add(lblRun);
+            Name = "Form1";
+            Text = "Form1";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label lblRun;
         private Button btnStart;
         private Button btnQuit;
         private GroupBox groupBox1;
